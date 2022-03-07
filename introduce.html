@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+    <style>
+        .nav {
+            list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+            border-bottom: solid 1px #2574ED;
+        }
+		.nav li a {
+            float: left; 
+			display: block;
+			color: #000000;
+            font-size: 16px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+			text-decoration: none;
+			text-align: center;
+		}
+        .nav li:not(:first-child) a { 
+            margin-left: 24px;
+        }
+        .nav li a.current {
+            color: #2574ED;
+            border-bottom: solid 5px #2574ED;
+            font-weight: bold;
+        }
+		.nav li a:hover:not(.current) {
+			color: #2574ED;
+		}
+        
+        .body-container {
+            float: top;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+        .body-left {
+            width: 50%;
+            float: left;
+            margin-left: 142px;
+        }
+        .body-right {
+            float: left;
+            width: 50%;
+            overflow: hidden;
+        }
+        .body-container li {
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+	<ul class="nav">
+		<li><a href="#" onclick="location.href='index.html'">Home</a></li>
+		<li><a href="" class="current">Introduction</a></li>
+		<li><a href="">Insights</a></li>
+		<li><a href="">Sourcing</a></li>
+		<li><a href="">3WS</a></li>
+        <li><a href="">Resource</a></li>
+	</ul>
+    <div style="font-size: 12px; color: #444444; padding: 9px; margin-left: 59px;">
+        Home &nbsp;>&nbsp; Introduction &nbsp;>&nbsp; Our Services 
+    </div>
+    <div class="body-container" style="background-color: #F1F7FF;">
+        <div class="body-left">
+            <div style="font-weight: 700;">We are because you are.</div>
+            <div style="font-weight: 400; margin-top: 10px;">We are your assistant for smart sourcing.</div>
+        </div>
+        <div class="body-right" style="margin-left: 289px;">
+            <ul style="list-style-type: none; padding: 0px;">
+                <li>> Market Insights</li>
+                <li>> Global Sourcing Assistance</li>
+                <li>> 3WS Service</li>
+            </ul>
+        </div>
+    </div>
+    <div class="body-container" style="background-color: #FFFFFF;">
+        <div class="body-left">
+            <div style="font-weight: 700;">Market Insights</div>
+            <ul style="list-style-type: none; padding: 0px;">
+                <li>> Market Insights</li>
+                <li>> Global Sourcing Assistance</li>
+                <li>> 3WS Service</li>
+            </ul>
+        </div>
+        <div class="body-right">
+            <div style="float: left;">View Insights ></div>
+            <div style="float: left; margin-left: 20px;width: 424px; height: 170px; background-image: url(./images/market_insights_banner.png);"></div>
+        </div>
+    </div>
+    <div class="body-container" style="background-color: #F1F7FF;">
+
+    </div>
+    <div class="body-container" style="background-color: #FFFFFF;">
+    </div>
+
+</body>
+</html>
