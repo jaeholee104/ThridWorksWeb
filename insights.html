@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIRD WORKS</title>
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0;
+            min-width: 1440px;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        limit-width {
+            width: 1440px;
+            margin: 0 auto;
+            padding: 0;
+            display: block;
+            
+        }
+
+        li {
+            list-style: none;
+        }
+
+        main {
+            display: block;
+            height: 100%;
+            flex-grow: 100;
+            display: flex;
+            flex-direction: row;
+        }
+
+        main-side {
+            width: 274px;
+            display: flex;
+            flex-direction: column;
+            border-right: #E5E5E5 solid 1px;
+            box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        main-body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 63px;
+            padding-right: 63px;
+        }
+
+        chart-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 32px;
+        }
+
+        chart-row > chart-layout {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        chart-layout > title-layout {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        chart-layout > title-layout > #title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        chart-layout > title-layout > #date {
+            font-size: 12px;
+            font-weight: 400;
+            color: #000000;
+            align-self: flex-end;
+        }
+
+        chart-layout > image-layout {
+            border: 0.5px solid #999999;
+            height: 221px;
+            background-size: cover;
+            margin-top: 19px;
+        }
+
+        filter-layout {
+            height: 162px;
+            border: #000000 solid 1px;
+            margin-top: 30px;
+            padding-left: 32px;
+            padding-right: 52px;
+            padding-top: 27px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        filter-layout > drop-down-layout {
+            width: 50%;
+            display: flex;
+            height: 32px;
+        }
+
+        select {
+            width: 268px;
+            height: 32px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            margin-left: 35px;
+            padding-left: 10px;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        drop-down-layout > #title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #000000;
+            align-self: center;
+        }
+
+        drop-down-layout > drop-down-button {
+            font-size: 15px;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        filter-layout > input-layout {
+            width: 50%;
+            height: 32px;
+            display: flex;
+            justify-content: end;
+        }
+
+        input-layout > #title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #000000;
+            align-self: center;
+        }
+
+        input-layout > #input-box {
+            height: 32px;
+            width: 268px;
+            border: #999999 solid 1px;
+            margin-left: 56px;
+        }
+
+        filter-layout > result-button-layout {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+        }
+
+        result-button-layout > result-button {
+            width: 109px;
+            height: 33px;
+            background-color: #444444;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        table-layout {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+        }
+
+        table-layout > table-header-layout {
+            height: 28px;
+            display: block;
+            position: relative;
+        }
+
+        table-header-layout > #title {
+            font-weight: 400;
+            font-size: 13px;
+            display: inline;
+            position: absolute;
+            bottom: 0px;
+        }
+
+        table-header-layout > number-of-page {
+            width: 119px;
+            height: 28px;
+            border: #E5E5E5 solid 1px;
+            border-radius: 5px;
+            font-weight: 400;
+            font-size: 14px;
+            float: right;
+            display: inline;
+            padding-left: 20px;
+            position: relative;
+            right: 0px;
+        }
+
+        table-header-layout > ok-button {
+            width: 59px;
+            height: 28px;
+            background-color: #444444;
+            border-radius: 5px;
+            font-weight: 400;
+            font-size: 14px;
+            display: inline;
+            color: #ffffff;
+            float: right;
+            position: relative;
+            margin-left: 20px;
+            right: 0px;
+        }
+
+        box-center {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav {
+            list-style-type: none;
+			margin: 0;
+			padding: 0;
+            display: block;
+            position: relative;
+            float: top;
+            border-bottom: solid 1px #2574ED;
+        }
+		.nav li a {
+            float: left; 
+			display: block;
+			color: #000000;
+            font-size: 16px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+			text-decoration: none;
+			text-align: center;
+		}
+        .nav li:not(:first-child) a { 
+            margin-left: 24px;
+        }
+        .nav li a.current {
+            color: #2574ED;
+            border-bottom: solid 5px #2574ED;
+            font-weight: bold;
+        }
+		.nav li a:hover:not(.current) {
+			color: #2574ED;
+		}
+
+        main-side > ul > li {
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 13px;
+        }
+
+        main-side > hr {
+            margin-left: 17px;
+            margin-right: 17px;
+            color: #444444;
+            margin-top: 36px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        table, th, td {
+            height: 37px;
+            border: 1px solid #999999;
+            border-collapse: collapse;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            font-size: 13px;
+            font-weight: 700;
+            background-color: #EEEEEE;
+        }
+
+        td {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        #widh-layout {
+            width: 100%;
+        }
+
+        #more-information-view {
+            width: 210px;
+            height: 28px;
+            display: inline;
+            float: right;
+            right: 0px;
+            border: 1px solid #2574ED;
+            box-sizing: border-box;
+            border-radius: 5px;
+            color: #2574ED;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        page-layout-wrapper {
+            display: flex;
+            height: 100%;
+            flex-direction: column-reverse;
+        }
+    
+        page-layout {
+            display: flex;
+            margin: 0 auto;
+            margin-top: 100px;
+            margin-bottom: 80px;
+        }
+
+        page-layout > div {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 13px;
+        }
+
+        arrow-box {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: #E5E5E5 solid 1px;
+            color: #999999;
+            font-size: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <limit-width>
+            <li><a href="#" onclick="location.href='index.html'">Home</a></li>
+            <li><a href="#" onclick="location.href='introduction.html'">Introduction</a></li>
+            <li><a href="" class="current">Insights</a></li>
+            <li><a href="">Sourcing</a></li>
+            <li><a href="">3WS</a></li>
+            <li><a href="">Resource</a></li>
+      </limit-width>  
+	</ul>
+    <div style="box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);">
+        <limit-width>
+            <div style="font-size: 12px; color: #444444; padding: 9px; margin-left: 160px;">
+                Home &nbsp;>&nbsp; Insights &nbsp;>&nbsp; 3WS Service
+            </div>
+        </limit-width>
+    </div>
+    <limit-width style="height: 100%;">
+        <main>
+            <main-side>
+                    <ul style="margin-top: 48px;">
+                        <span style="font-size: 14px; font-weight: 700;">Market Prices ⓘ</span>
+                        <li><input type="checkbox">Butter</li>
+                        <li><input type="checkbox">Cheese</li>
+                        <li><input type="checkbox">SMP</li>
+                        <li><input type="checkbox">Lactose</li>
+                    </ul>
+                    <hr>
+                    <ul style="margin-top: 36px;">
+                        <span style="font-size: 14px; font-weight: 700;">Market Prices ⓘ</span>
+                        <li><input type="checkbox">Butter</li>
+                        <li><input type="checkbox">Cheese</li>
+                        <li><input type="checkbox">SMP</li>
+                        <li><input type="checkbox">Lactose</li>
+                    </ul>
+                    <hr>
+                    <ul style="margin-top: 36px;">
+                        <span style="font-size: 14px; font-weight: 700;">Market Prices ⓘ</span>
+                        <li><input type="checkbox">Butter</li>
+                        <li><input type="checkbox">Cheese</li>
+                        <li><input type="checkbox">SMP</li>
+                        <li><input type="checkbox">Lactose</li>
+                    </ul>
+            </main-side>
+            <main-body>
+                <chart-row>
+                    <chart-layout>
+                        <title-layout>
+                            <div id="title">국가별 수입통관 비중(%)</div>
+                            <div id="date">’22년 2월 1주 기준</div>
+                        </title-layout>
+                        <image-layout style="background-image: url(./images/insights_chart1.png);"></image-layout>
+                    </chart-layout>
+                    <chart-layout>
+                        <title-layout>
+                            <div id="title">국가별 수입통관 비중(%)</div>
+                            <div id="date">’22년 2월 1주 기준</div>
+                        </title-layout>
+                        <image-layout style="background-image: url(./images/insights_chart2.png);"></image-layout>
+                    </chart-layout>
+                </chart-row>
+                <filter-layout>
+                    <drop-down-layout>
+                        <div id="title">· Authority</div>
+                        <select>
+                            <option>전체</option>
+                            <option>옵션1</option>
+                            <option>옵션2</option>
+                        </select>
+                    </drop-down-layout>
+                    <input-layout>
+                        <div id="title">· Title name</div>
+                        <div id="input-box"></div>
+                    </input-layout>
+                    <drop-down-layout>
+                        <div id="title">· Authority</div>
+                        <select>
+                            <option>전체</option>
+                            <option>옵션1</option>
+                            <option>옵션2</option>
+                        </select>
+                    </drop-down-layout>
+                    <input-layout>
+                        <div id="title">· Title name</div>
+                        <div id="input-box"></div>
+                    </input-layout>
+                    <result-button-layout>
+                        <result-button>
+                            Result
+                        </result-button>
+                    </result-button-layout>
+                </filter-layout>
+                <table-layout>
+                    <table-header-layout>
+                        <div id="title">▶ Total : 56404 ▶ Page : 1/2821</div>
+                        <ok-button><box-center>확인</box-center></ok-button>
+                        <number-of-page><box-center>20개씩 보기</box-center></number-of-page>
+                    </table-header-layout>
+                    <table style="margin-top: 20px;">
+                        <th>No.</th>
+                        <th>Authority</th>
+                        <th>Title</th>
+                        <th>Country</th>
+                        <th>Update</th>
+                        <tr style="background-color: #FFF6E9;">
+                            <td>56404</td>
+                            <td>EU commission</td>
+                            <td>[EU환경규제] EC SCHEER, 보건 /환경 이슈에 관한 성명서 발표</td>
+                            <td>EU</td>
+                            <td>2022-02-05</td>
+                        </tr>
+                        <tr>
+                            <td>56403</td>
+                            <td>EU commission</td>
+                            <td>[EU환경규제] EC, RoHS 지침 하 일반 형광등 내 수은 사용 제한에 대한 면제 조치 철회</td>
+                            <td>EU</td>
+                            <td>2022-02-05</td>
+                        </tr>
+                        <tr>
+                            <td>56402</td>
+                            <td>EU commission</td>
+                            <td>EU, 對 러시아 제재로  外資 차단, 수출통제 및 노드 스트림2 등 제시  </td>
+                            <td>EU</td>
+                            <td>2022-02-05</td>
+                        </tr>
+                        <tr>
+                            <td>56401</td>
+                            <td>USDA</td>
+                            <td>녹색 투자자그룹, EU 텍소노미상 원자력 및 가스 포함을 강력 비판</td>
+                            <td>EU</td>
+                            <td>2022-02-05</td>
+                        </tr>
+                    </table>
+                    <div id="width-layout">
+                        <div id="more-information-view"><box-center>More Information view ></box-center></div>
+                    </div>
+                </table-layout>
+                <page-layout-wrapper>
+                <page-layout>
+                    <arrow-box><<</arrow-box>
+                    <arrow-box><</arrow-box>
+                    <div style="margin-left:5px; border: #E5E5E5 solid 1px; color: #FF7A00;">1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div style="margin-right: 5px;">10</div>
+                    <arrow-box>></arrow-box>
+                    <arrow-box>>></arrow-box>
+                </page-layout>
+            </page-layout-wrapper>
+            </main-body>
+        </main>
+    </limit-width>
+</body>
+</html>
