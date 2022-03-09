@@ -10,22 +10,76 @@
         * {
             font-family: 'Noto Sans KR', sans-serif;
         }
+
         html, body {
-            margin: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
             padding: 0;
+            min-width: 1440px;
+            display: block;
+        }
+
+        limit-width {
+            width: 1440px;
+            margin: 0 auto;
+            padding: 0;
+            display: block;
         }
 
         /* tag */
         header {
             height: 60px;
+            width: inherit;
             background-color: #444444;
-            position: relative;
-            line-height: 60px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
         }
+
+        header .logo-container {
+            position: relative;
+            float: left;
+            margin-top: 3px;
+        }
+
+        .logo-box {
+            position: relative;
+            float: left;
+            width: 30px;
+            height: 20px;
+        }
+
+        .logo-box:nth-child(1) {
+            background-color: #ffffff;
+            position: absolute;
+            opacity: 40%;
+            left: 50px;
+        }
+
+
+        .logo-box:nth-child(2) {
+            background-color: #ffffff;
+            position: absolute;
+            opacity: 40%;
+            left: 60px;
+        }
+
+
+        #logo-text {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 106px;
+            float: left;
+            position: relative;
+            bottom: 2px;
+        }
+
         header .roundButton {
             width: 84px;
             height: 30px;
-            position: absolute;
+            float: right;
             background-color: #2574ED;
             border-radius: 100px;
             font-size: 14px;
@@ -37,100 +91,69 @@
             color: #ffffff;
             cursor: pointer;
         }
+
+
+        header #sign-in {
+            float: right;
+            margin-right: 15px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
         .roundButton:hover {
             background-color: #0860a8;
-        }
-
-        header #logo-text {
-            color: #ffffff;
-            float: left;
-            font-size: 16px;
-            font-weight: bold;
-            margin-left: 106px;
-            position: relative;
-        }
-
-        header #language {
-            float: right;
-            font-size: 14px;
-            font-style: normal;
-            color: #ffffff;
-            position: relative;
-            margin-right: 50px;
-            bottom: 2px;
         }
 
         header #language-icon {
             float: right;
             width: 20px;
             height: 20px;
-            top: 50%;
-            margin-top: -10px;
+            margin-top: 5px;
             background-image: url('images/round_language_white_24dp.png');
-            position: relative;
             background-size: cover;
             margin-right: 5px;
         }
 
-        header #sign-in {
+
+        header #language {
             float: right;
-            top: 50%;
-            margin-top: -15px;
-            margin-right: 15px;
+            font-size: 14px;
+            font-style: normal;
+            color: #ffffff;
+            margin-top: 3px;
             position: relative;
-        }
-
-        header .logo-box {
-            position: absolute;
-            width: 30px;
-            height: 20px;
-        }
-
-        .logo-box:nth-child(1) {
-            background-color: #ffffff;
-            opacity: 40%;
-            top: 20px;
-            left: 50px;
-        }
-
-
-        .logo-box:nth-child(2) {
-            background-color: #ffffff;
-            opacity: 40%;
-            top: 20px;
-            left: 60px;
+            margin-right: 50px;
         }
 
         main {
-            height: 665px;
+            height: calc(100vh - 360px);
+            min-height: 665px;
+            width: inherit;
             background-image: url('./images/main_background.png');
             background-size: cover;
+            display: flex;
+            float: left;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        main .container {
-            position: absolute;
-            margin-left: 68px;
-            height: 100%;
-        }
-
-        main .container #title {
+        main #title {
             font-weight: 700;
             font-size: 40px;
+            left: 68px;
             color: #ffffff;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-            position:relative;
-            margin-top: 271px;
-            float: top;
-            overflow: hidden;
+            display: block;
         }
 
-        main .container #search-container {
-            float: top;
-            margin-top: 7px;
+        main #search-container {
+            left: 68px;
+            margin-top: 15px;
             height: 42px;
+            display: block;
         }
 
-        main .container #search-container .dropDown {
+        main #search-container .dropDown {
             width: 68px;
             height: 100%;
             border-radius: 5px 0px 0px 5px;
@@ -145,7 +168,7 @@
             float: left;
         }
 
-        main .container #search-container .editText {
+        main #search-container .editText {
             width: 454px;
             height: 100%;
             position: relative;
@@ -159,7 +182,7 @@
             float: left;
         }
 
-        main .container #search-container .search-background {
+        main #search-container .search-background {
             width: 75px;
             height: 100%;
             border-radius: 0px 5px 5px 0px;
@@ -181,8 +204,14 @@
 
         footer {
             background-color: #1b1b1b;
+            width: inherit;
             height: 299px;
+            bottom: 0px;
+            margin: 0;
+            padding: 0;
+            display: block;
             position: relative;
+            float: left;
         }
 
         footer .title-container {
@@ -206,26 +235,24 @@
             color: #E5E5E5;
             margin-top: 4px;
             position: relative;
-            overflow: hidden;
         }
 
-        footer .nav-menu-container {
-            
-            margin-left: 60px;
+        .nav-menu-container {            
+            height: 100%;
             float: right;
+            padding-right: 160px;
             top: 10px;
-            padding-right: 250px;
+            margin: 0;
             position: relative;
-            overflow: hidden;
+            display: block;
         }
 
-        footer .nav-menu-container .nav-menu {
+        .nav-menu-container .nav-menu {
             font-size: 18px;
             font-weight: 700;
             float: left;
             padding: 0px;
             padding-right: 60px;
-            overflow: hidden;
             color: #E5E5E5;
             list-style: none;
         }
@@ -233,6 +260,7 @@
         .nav-menu .sub-menu {
             font-size: 14px;
             font-weight: 400;
+            padding: 0px;
             padding-bottom: 2px;
             color: #E5E5E5;
         }
@@ -241,20 +269,17 @@
             padding-top: 20px;
         }
 
-        .footer .line {
-            width: 990px;
-            height: 50px;
-            color: #C4C4C4;
-            position: absolute;
-        }
-
         #reserve {
             font-size: 12px;
             font-weight: 400;
             color: #E5E5E5;
-            position: absolute;
-            right: 30px;
-            bottom: 21px;
+            text-align: end;
+            display: block;
+            position: relative;
+            float: right;
+            width: 100%;
+            margin-right: 20px;
+            margin-top: 70px;
         }
 
         li {
@@ -265,15 +290,19 @@
 </head>
 <body>
     <header>
-        <div class="logo-box"></div>
-        <div class="logo-box"></div>
-        <div id="logo-text">THIRD WORKS</div>
-        <div id="language" >English</div>
-        <div id="language-icon" ></div>
-        <div id="sign-in" class="roundButton" onclick="location.href='introduce.html'">Sign in</div>
+        <limit-width>
+            <div class="logo-container">
+                <div class="logo-box"></div>
+                <div class="logo-box"></div>
+                <div id="logo-text">THIRD WORKS</div>
+            </div>
+            <div id="language" >English</div>
+            <div id="language-icon" ></div>
+            <div id="sign-in" class="roundButton" onclick="location.href='introduce.html'">Sign in</div>
+        </limit-width>
     </header>
     <main>
-        <div class="container">
+        <limit-width>
             <div id="title">Get started a smart sourcing here.</div>
             <div id="search-container">
                 <div class="dropDown">All ></div>
@@ -282,75 +311,77 @@
                     <div class="search-button"></div>
                 </div>
             </div>
-        </div>
+        </limit-width>
     </main>
     <footer>
-        <div class="title-container">
-            <div class="title">THIRD WORKS</div>
-            <div class="subtitle">We are your assistant<br>
-                for smarter Dairy Sourcing</div>
-        </div>
-        <div class="nav-menu-container">
-            <hr style="right:0px; width: 100%; top:28px; position: absolute; margin-top: 20px;">
-            <ul class="nav-menu">
-                Introduce
-                <li class="sub-menu">
-                    Our Service >
-                </li>
-                <li class="sub-menu">
-                    Contract us >
-                </li>
-            </ul>
-            <ul class="nav-menu">
-                Insights
-                <li class="sub-menu">
-                    Market Prices >
-                </li>
-                <li class="sub-menu">
-                    Global Market >
-                </li>
-                <li class="sub-menu">
-                    Report >
-                </li>
-                <li class="sub-menu">
-                    3WS Insights >
-                </li>
-            </ul>
-            <ul class="nav-menu">
-                Sourcing
-                <li class="sub-menu">
-                    Get Started >
-                </li>
-            </ul>
-            <ul class="nav-menu">
-                3WS Services
-                <li class="sub-menu">
-                    Sourcing Support >
-                </li>
-                <li class="sub-menu">
-                    3WS Market Research >
-                </li>
-            </ul>
-            <ul class="nav-menu">
-                Resource
-                <li class="sub-menu">
-                    Tariff rate >
-                </li>
-                <li class="sub-menu">
-                    Specification >
-                </li>
-                <li class="sub-menu">
-                    Forms >
-                </li>
-                <li class="sub-menu">
-                    Approved >
-                </li>
-                <li class="sub-menu">
-                    Exporter No. >
-                </li>
-            </ul>
-        </div>
-        <div id="reserve">Third Works. All rights reserved.</div>
+        <limit-width>
+            <div class="title-container">
+                <div class="title">THIRD WORKS</div>
+                <div class="subtitle">We are your assistant<br>
+                    for smarter Dairy Sourcing</div>
+            </div>
+            <div class="nav-menu-container">
+                <hr style="width: 100%; top:40px; position: absolute; right: 1px;">
+                <ul class="nav-menu">
+                    Introduce
+                    <li class="sub-menu">
+                        Our Service >
+                    </li>
+                    <li class="sub-menu">
+                        Contract us >
+                    </li>
+                </ul>
+                <ul class="nav-menu">
+                    Insights
+                    <li class="sub-menu">
+                        Market Prices >
+                    </li>
+                    <li class="sub-menu">
+                        Global Market >
+                    </li>
+                    <li class="sub-menu">
+                        Report >
+                    </li>
+                    <li class="sub-menu">
+                        3WS Insights >
+                    </li>
+                </ul>
+                <ul class="nav-menu">
+                    Sourcing
+                    <li class="sub-menu">
+                        Get Started >
+                    </li>
+                </ul>
+                <ul class="nav-menu">
+                    3WS Services
+                    <li class="sub-menu">
+                        Sourcing Support >
+                    </li>
+                    <li class="sub-menu">
+                        3WS Market Research >
+                    </li>
+                </ul>
+                <ul class="nav-menu">
+                    Resource
+                    <li class="sub-menu">
+                        Tariff rate >
+                    </li>
+                    <li class="sub-menu">
+                        Specification >
+                    </li>
+                    <li class="sub-menu">
+                        Forms >
+                    </li>
+                    <li class="sub-menu">
+                        Approved >
+                    </li>
+                    <li class="sub-menu">
+                        Exporter No. >
+                    </li>
+                </ul>
+            </div>
+            <div id="reserve">Third Works. All rights reserved.</div>
+        </limit-width>
     </footer>
 </body>
 </html>
