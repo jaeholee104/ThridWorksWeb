@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIRD WORKS</title>
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0;
+            min-width: 1440px;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        limit-width {
+            width: 1440px;
+            margin: 0 auto;
+            padding: 0;
+            display: block;
+            
+        }
+
+        li {
+            list-style: none;
+        }
+
+        main {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        main-side {
+            width: 274px;
+            display: flex;
+            flex-direction: column;
+            border-right: #E5E5E5 solid 1px;
+            box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        main-body {
+            margin-top: 5px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        select {
+            width: 268px;
+            height: 32px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            margin-left: 35px;
+            padding-left: 10px;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        box-center {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav {
+            list-style-type: none;
+			margin: 0;
+			padding: 0;
+            display: block;
+            position: relative;
+            float: top;
+            border-bottom: solid 1px #2574ED;
+        }
+		.nav li a {
+            float: left; 
+			display: block;
+			color: #000000;
+            font-size: 16px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+			text-decoration: none;
+			text-align: center;
+		}
+        .nav li:not(:first-child) a { 
+            margin-left: 24px;
+        }
+        .nav li a.current {
+            color: #2574ED;
+            border-bottom: solid 5px #2574ED;
+            font-weight: bold;
+        }
+		.nav li a:hover:not(.current) {
+			color: #2574ED;
+		}
+
+
+        main-side > ul {
+            padding: 0;
+            margin: 0;
+            margin-left: 31px;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 13px;
+        }
+
+        main-side > ul > li {
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 13px;
+        }
+
+        main-side > hr {
+            margin-left: 17px;
+            margin-right: 17px;
+            color: #444444;
+            margin-top: 36px;
+        }
+
+        main-side > button-layout {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        button-layout > round-button {
+            width: 240px;
+            height: 33px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-left: 17px;
+            margin-right: 17px;
+        }
+
+        input[type="checkbox"] {
+            padding: 0;
+            margin: 0;
+            margin-right: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <limit-width>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="" class="current">Sourcing</a></li>
+            <li><a href="">3WS</a></li>
+            <li><a href="">Resource</a></li>
+      </limit-width>  
+	</ul>
+    <div style="box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);">
+        <limit-width>
+            <div style="font-size: 12px; color: #444444; padding: 9px; margin-left: 240px;">
+                Home &nbsp;>&nbsp; Sourcing &nbsp;>&nbsp; Get Started
+            </div>
+        </limit-width>
+    </div>
+    <limit-width style="height: 100%;">
+        <main>
+            <main-side>
+                    <button-layout>
+                        <round-button style="background-color: #444444; color: #fff; margin-top: 25px;">My Sourcing List</round-button>
+                    </button-layout>
+                    <button-layout>
+                        <round-button style="border: #000 solid 1px; color: #000; margin-top: 6px;">On going List</round-button>
+                    </button-layout>
+                    <ul style="margin-top: 48px;">
+                        <span style="font-size: 14px; font-weight: 700;">Details</span>
+                        <li style="color: #2574ED; font-weight: 700;"><input type="checkbox">Manufacturer</li>
+                        <li><input type="checkbox">Exporter</li>
+                        <li><input type="checkbox">Trader</li>
+                        <li><input type="checkbox">Others</li>
+                    </ul>
+                    <hr>
+                    <ul style="margin-top: 36px;">
+                        <span style="font-size: 14px; font-weight: 700;">Sample Free</span>
+                        <li><input type="checkbox">Butter</li>
+                        <li><input type="checkbox">Cheese</li>
+                        <li><input type="checkbox">SMP</li>
+                        <li><input type="checkbox">Lactose</li>
+                    </ul>
+                    <hr>
+                    <ul style="margin-top: 36px;">
+                        <span style="font-size: 14px; font-weight: 700;">Specification</span>
+                        <li><input type="checkbox">Yes</li>
+                        <li><input type="checkbox">No</li>
+                    </ul>
+                    <hr>
+                    <ul style="margin-top: 36px;">
+                        <span style="font-size: 14px; font-weight: 700;">Approved Exporter No.</span>
+                        <li><input type="checkbox">Yes</li>
+                        <li><input type="checkbox">No</li>
+                    </ul>
+            </main-side>
+            <main-body style="cursor:pointer; background-image: url(./images/sourcing_sample_body.png); background-size: contain; background-repeat: no-repeat;" onclick="location.href='details.html'">
+            </main-body>
+        </main>
+    </limit-width>
+</body>
+</html>
