@@ -97,7 +97,6 @@
         }
 
         filter-layout {
-            height: 162px;
             border: #000000 solid 1px;
             margin-top: 30px;
             padding-left: 32px;
@@ -127,6 +126,7 @@
         }
 
         drop-down-layout > #title {
+            width: 85px;
             font-size: 15px;
             font-weight: 700;
             color: #000000;
@@ -147,6 +147,7 @@
         }
 
         input-layout > #title {
+            width: 120px;
             font-size: 15px;
             font-weight: 700;
             color: #000000;
@@ -360,10 +361,10 @@
 <body>
     <ul class="nav">
         <limit-width>
-            <li><a href="#" onclick="location.href='index.html'">Home</a></li>
-            <li><a href="#" onclick="location.href='introduction.html'">Introduction</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="introduction.html">Introduction</a></li>
             <li><a href="" class="current">Insights</a></li>
-            <li><a href="">Sourcing</a></li>
+            <li><a href="sourcing.html">Sourcing</a></li>
             <li><a href="">3WS</a></li>
             <li><a href="">Resource</a></li>
       </limit-width>  
@@ -420,6 +421,7 @@
                     </chart-layout>
                 </chart-row>
                 <filter-layout>
+                    <div style="height: 15px; width: 100%;"></div>
                     <drop-down-layout>
                         <div id="title">· Authority</div>
                         <select>
@@ -432,8 +434,9 @@
                         <div id="title">· Title name</div>
                         <div id="input-box"></div>
                     </input-layout>
+                    <div style="height: 15px; width: 100%;"></div>
                     <drop-down-layout>
-                        <div id="title">· Authority</div>
+                        <div id="title">· Country</div>
                         <select>
                             <option>전체</option>
                             <option>옵션1</option>
@@ -441,14 +444,16 @@
                         </select>
                     </drop-down-layout>
                     <input-layout>
-                        <div id="title">· Title name</div>
+                        <div id="title">· Product name</div>
                         <div id="input-box"></div>
                     </input-layout>
+                    <div style="height: 15px; width: 100%;"></div>
                     <result-button-layout>
                         <result-button>
                             Result
                         </result-button>
                     </result-button-layout>
+                    <div style="height: 15px; width: 100%;"></div>
                 </filter-layout>
                 <table-layout>
                     <table-header-layout>
